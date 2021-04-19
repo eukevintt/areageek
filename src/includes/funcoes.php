@@ -37,19 +37,19 @@ function logout()
 //     }
 // }
 
-// function is_admin()
-// {
-//     $nivel = $_SESSION['nivel'] ?? null;
-//     if (is_null($nivel)) {
-//         return false;
-//     } else {
-//         if ($nivel == 'admin') {
-//             return true;
-//         } else {
-//             return false;
-//         }
-//     }
-// }
+function isAdmin()
+{
+    $nivel = $_SESSION['nivel'] ?? null;
+    if (is_null($nivel)) {
+        return false;
+    } else {
+        if ($nivel == 'admin') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
 // function is_usuario()
 // {

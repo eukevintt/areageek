@@ -34,7 +34,7 @@
                 echo 'Todos os dados são obrigatório!';
                 require "../forms/form-nova-materia.php";
             } else {
-                $q = "insert into noticia (titulo, msg, sub_tit, texto, usua_nick, id_ass, id_cat) values ('$titulo', '$msg', '$subtit', '$texto', '$editor', '$assunto', '$categoria')";
+                $q = "insert into noticia (titulo, msg, sub_tit, texto, usua_nick, id_ass, data_not, id_cat) values ('$titulo', '$msg', '$subtit', '$texto', '$editor', '$assunto', NOW(), '$categoria')";
                 if ($banco->query($q)) {
                     echo 'Noticia cadastrada!';
                     require "../forms/form-nova-materia.php";

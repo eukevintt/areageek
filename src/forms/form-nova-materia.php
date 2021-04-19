@@ -18,16 +18,16 @@
         <?php
         $busca2 = $banco->query('select * from assunto');
         while ($reg2 = $busca2->fetch_object()) {
-            echo "<option value='$reg->id_ass'>$reg->nome_ass</option>";
+            echo "<option value='$reg2->id_ass'>$reg2->nome_ass</option>";
         }
         ?>
     </select>
     Categoria<select name="categoria" id="categoria" required>
         <option value="">Selecione</option>
         <?php
-        $busca2 = $banco->query('select * from categorias');
-        while ($reg2 = $busca2->fetch_object()) {
-            echo "<option value='$reg->id_cat'>$reg->nome_cat</option>";
+        $busca3 = $banco->query('select * from categorias');
+        while ($reg3 = $busca3->fetch_object()) {
+            echo "<option value='$reg3->id_cat'>$reg3->nome_cat</option>";
         }
         ?>
     </select>

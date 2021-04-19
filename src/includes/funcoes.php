@@ -28,14 +28,14 @@ function logout()
     $_SESSION['nivel'] = "";
 }
 
-// function is_logado()
-// {
-//     if (empty($_SESSION['user'])) {
-//         return false;
-//     } else {
-//         return true;
-//     }
-// }
+function isLogado()
+{
+    if (empty($_SESSION['user'])) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 function isAdmin()
 {
@@ -64,3 +64,17 @@ function isAdmin()
 //         }
 //     }
 // }
+
+function isEditor()
+{
+    $nivel = $_SESSION['nivel'] ?? null;
+    if (is_null($nivel)) {
+        return false;
+    } else {
+        if ($nivel == 'editor') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}

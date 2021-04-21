@@ -38,13 +38,12 @@
                 echo ($editorVe == true) ? "../logout.php'" : "logout.php'";
                 echo "class='btn btn-danger'>Sair</a>";
             } else {
-
                 echo "<a href='";
                 echo ($editorVe === true) ? "../login.php'" : "login.php'";
-                echo "class='btn btn-light me-2'>Login</a>";
+                echo (@$clickedLogin == false) ? "class='btn btn-light me-2'>Login</a>" : "class='btn btn-dark me-2'>Login</a>";
                 echo "<a href='";
                 echo ($editorVe === true) ? "../cadastro.php'" : "cadastro.php'";
-                echo "class='btn btn-light'>Cadastrar-se</a>";
+                echo (@$clickedCad == false) ? "class='btn btn-light me-2'>Cadastrar-se</a>" : "class='btn btn-dark me-2'>Cadastrar-se</a>";
             }
             echo "</div>";
             ?>

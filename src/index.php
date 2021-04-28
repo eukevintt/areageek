@@ -16,13 +16,19 @@
     require_once "includes/funcoes.php";
     $editorVe = false;
     $index = 'active';
+    $categoriaVe  = false;
     include "includes/menu.php";
     ?>
+    <div class="container py-4">
+        <?php
 
-
-
-    <div>
-
+        $busca = $banco->query('select titulo from noticia');
+        echo "<div class='row'>";
+        while ($reg = $busca->fetch_object()) {
+            echo "<div class='col-5'>" . $reg->titulo . "</div>";
+        }
+        echo "</div>";
+        ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>

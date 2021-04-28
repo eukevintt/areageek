@@ -16,6 +16,7 @@
     require_once "../includes/funcoes.php";
     $editorVe = true;
     $novaCat = 'active';
+    $categoriaVe  = false;
     include "../includes/menu.php";
     ?>
 

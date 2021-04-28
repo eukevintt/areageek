@@ -17,6 +17,7 @@
     $editorVe = false;
     $cadastro = 'active';
     $clickedCad = true;
+    $categoriaVe  = false;
     include "includes/menu.php";
     ?>
 

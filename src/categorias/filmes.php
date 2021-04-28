@@ -14,34 +14,15 @@
     <?php
     require_once "../includes/conectar.php";
     require_once "../includes/funcoes.php";
-    $editorVe = true;
-    $novoAss = 'active';
-    $categoriaVe  = false;
+    $editorVe = false;
+    $filmes = 'active';
+    $categoriaVe  = true;
     include "../includes/menu.php";
+
     ?>
 
     <div>
-        <?php
-        if (!isset($_POST['assunto'])) {
-            require "../forms/form-novo-assunto.php";
-        } else {
-            $assunto = $_POST['assunto'] ?? null;
 
-            if (empty($assunto)) {
-                echo 'Todos os dados são obrigatório!';
-                require "../forms/form-novo-assunto.php";
-            } else {
-                $q = "insert into assunto (nome_ass) values ('$assunto')";
-                if ($banco->query($q)) {
-                    echo 'Categoria cadastrada!';
-                    require "../forms/form-novo-assunto.php";
-                } else {
-                    echo 'Não foi possivel criar a categoria';
-                    require "../forms/form-novo-assunto.php";
-                }
-            }
-        }
-        ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>

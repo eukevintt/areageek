@@ -15,6 +15,7 @@
     require_once "includes/conectar.php";
     require_once "includes/funcoes.php";
     $editorVe = false;
+    $categoriaVe  = false;
     include "includes/menu.php";
 
     ?>

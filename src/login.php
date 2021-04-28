@@ -16,6 +16,7 @@
     require_once "includes/funcoes.php";
     $editorVe = false;
     $clickedLogin = true;
+    $categoriaVe  = false;
     $login = 'btn-dark';
     include "includes/menu.php";
 

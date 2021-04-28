@@ -17,7 +17,7 @@
 
     logout();
     echo "<script>
-        window.location = 'login.php'
+        window.location = 'index.php'
     </script>";
     ?>
 

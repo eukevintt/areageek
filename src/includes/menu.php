@@ -34,11 +34,26 @@
                 }
 
                 if (isAdmin()) {
+
+                    echo '<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adm-dropdown" aria-controls="adm-dropdown" aria-expanded="true" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <div class="collapse navbar-collapse" id="adm-dropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle ' . @$cadastro . '" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Administrador
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">';
                     echo "<li class='nav-item'>
-                        <a class='nav-link " . @$cadastro . "' href=";
-                    echo ($editorVe === true) ? "../cadastro.php" : "cadastro.php";
+                        <a class='nav-link text-dark' href=";
+                    echo (($editorVe === true) ? "../cadastro.php" : ($categoriaVe)) ? "../cadastro.php" : "cadastro.php";
                     echo ">Cadastrar Usuário</a>
-                    </li>";
+                            </li>";
+                    echo '</ul>
+                      </li>
+                    </ul>
+                  </div>';
                 }
                 ?>
             </ul>

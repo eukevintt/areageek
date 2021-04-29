@@ -21,6 +21,9 @@
                 <li class="nav-item">
                     <a class="nav-link <?php echo @$hqs ?>" href="<?php echo (($categoriaVe === true) ? "hqs.php" : ($editorVe === true)) ? "../categorias/hqs.php" : "categorias/hqs.php" ?>">HQ's</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo @$noticias ?>" href="<?php echo (($categoriaVe === true) ? "hqs.php" : ($editorVe === true)) ? "../categorias/noticias.php" : "categorias/noticias.php" ?>">Notícias</a>
+                </li>
                 <?php
                 if (isEditor() || isAdmin()) {
                     echo "<li class='nav-item'>

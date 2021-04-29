@@ -32,15 +32,12 @@
             $email = $_POST['email'] ?? null;
             $senha1 = $_POST['senha1'] ?? null;
             $senha2 = $_POST['senha2'] ?? null;
-            $nivel = $_POST['nivel'] ?? null;
+            $nivel = $_POST['nivel'] ?? "usu";
 
             if ($senha1 === $senha2) {
                 if (empty($nick) || empty($nome) || empty($senha1) || empty($senha2) || empty($email)) {
                     echo 'Todos os dados são obrigatório!';
                     require "forms/form-cadastrar-usu.php";
-                }
-                if (empty($nivel)) {
-                    $nivel = 'usu';
                 } else {
                     $senha = gerarHash($senha1);
                     $q = "insert into usuario (nick, nome, senha, email, nivel) values ('$nick', '$nome', '$senha', '$email', '$nivel')";

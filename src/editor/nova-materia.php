@@ -22,8 +22,8 @@
 
     <div class='container'>
         <div class='py-4'>
-            <a href="novo-assunto.php" class="btn btn-primary">Novo Assunto</a>
-            <a href="nova-categoria.php" class="btn btn-primary">Nova Categoria</a>
+            <a href="novo-assunto.php" class="btn btn-warning">Novo Assunto</a>
+            <a href="nova-categoria.php" class="btn btn-warning">Nova Categoria</a>
         </div>
         <?php
         if (!isset($_POST['titulo'])) {

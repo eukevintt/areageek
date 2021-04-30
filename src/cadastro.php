@@ -36,21 +36,22 @@
 
             if ($senha1 === $senha2) {
                 if (empty($nick) || empty($nome) || empty($senha1) || empty($senha2) || empty($email)) {
-                    echo 'Todos os dados são obrigatório!';
+                    echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">error</i>Todos os dados são obrigatório!<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                     require "forms/form-cadastrar-usu.php";
                 } else {
                     $senha = gerarHash($senha1);
                     $q = "insert into usuario (nick, nome, senha, email, nivel) values ('$nick', '$nome', '$senha', '$email', '$nivel')";
                     if ($banco->query($q)) {
-                        echo 'Usuário cadastrado!';
+                        echo '<div class="alert alert-success text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">done</i>Usuário cadastrado!<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                         require "forms/form-cadastrar-usu.php";
                     } else {
-                        echo 'Não foi possivel criar o usuário, o usuário já está sendo usado';
+                        echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">error</i>Não foi possivel criar o usuário<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                         require "forms/form-cadastrar-usu.php";
                     }
                 }
             } else {
-                echo "Senhas não conferem!";
+                echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">password</i>Senhas não conferem!<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                require "forms/form-cadastrar-usu.php";
             }
         }
         ?>

@@ -33,7 +33,7 @@
             $q = "select nick, nome, senha, nivel from usuario where nick = '$nick'";
             $busca = $banco->query($q);
             if (!$busca) {
-                echo 'Errado!';
+                echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">error</i>Errado!<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
             } else {
                 if ($busca->num_rows > 0) {
                     $reg = $busca->fetch_object();
@@ -43,11 +43,11 @@
                         $_SESSION['nivel'] = $reg->nivel;
                         echo "<script>window.location = 'index.php'</script>";
                     } else {
-                        echo 'Senha inválida!';
+                        echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">password</i>Senha inválida!<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                         require "forms/form-login.php";
                     }
                 } else {
-                    echo 'Usuário errado!';
+                    echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">perm_identity</i>Usuário errado!<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                     require "forms/form-login.php";
                 }
             }

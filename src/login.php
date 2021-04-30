@@ -20,6 +20,10 @@
     $login = 'btn-dark';
     include "includes/menu.php";
 
+    if (isLogado()) {
+        echo '<script>window.location = "index.php"</script>';
+        exit;
+    }
     ?>
 
     <div>

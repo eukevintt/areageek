@@ -51,19 +51,19 @@ function isAdmin()
     }
 }
 
-// function is_usuario()
-// {
-//     $nivel = $_SESSION['nivel'] ?? null;
-//     if (is_null($nivel)) {
-//         return false;
-//     } else {
-//         if ($nivel == 'usu') {
-//             return true;
-//         } else {
-//             return false;
-//         }
-//     }
-// }
+function isUsu()
+{
+    $nivel = $_SESSION['nivel'] ?? null;
+    if (is_null($nivel)) {
+        return false;
+    } else {
+        if ($nivel == 'usu') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
 function isEditor()
 {

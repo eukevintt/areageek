@@ -50,6 +50,30 @@
                     echo (($editorVe === true) ? "../cadastro.php" : ($categoriaVe)) ? "../cadastro.php" : "cadastro.php";
                     echo ">Cadastrar Usuário</a>
                             </li>";
+
+                    echo "<li class='nav-item'>
+                        <a class='nav-link text-dark' href=";
+                    echo (($editorVe === true) ? "../cadastro.php" : ($categoriaVe)) ? "../cadastro.php" : "cadastro.php";
+                    echo ">Relação usuários</a>
+                            </li>";
+
+                    echo "<li class='nav-item'>
+                        <a class='nav-link text-dark' href=";
+                    echo (($editorVe === true) ? "../cadastro.php" : ($categoriaVe)) ? "../cadastro.php" : "cadastro.php";
+                    echo ">Relação Categorias</a>
+                            </li>";
+
+                    echo "<li class='nav-item'>
+                        <a class='nav-link text-dark' href=";
+                    echo (($editorVe === true) ? "../cadastro.php" : ($categoriaVe)) ? "../cadastro.php" : "cadastro.php";
+                    echo ">Relação Assuntos</a>
+                            </li>";
+
+                    echo "<li class='nav-item'>
+                        <a class='nav-link text-dark' href=";
+                    echo (($editorVe === true) ? "../cadastro.php" : ($categoriaVe)) ? "../cadastro.php" : "cadastro.php";
+                    echo ">Relação Matérias</a>
+                            </li>";
                     echo '</ul>
                       </li>
                     </ul>

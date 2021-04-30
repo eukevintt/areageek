@@ -18,6 +18,11 @@
     $categoriaVe  = false;
     $novaMat = 'active';
     include "../includes/menu.php";
+
+    if (isUsu() || !isLogado()) {
+        echo '<div class="alert alert-danger text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">pan_tool</i>Parado ai, você acessou uma página restrita, volte para o inicio!</div>';
+        exit;
+    }
     ?>
 
     <div class='container'>

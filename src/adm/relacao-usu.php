@@ -37,13 +37,12 @@
                 <?php
                 $busca = $banco->query('select nick, nome, email, nivel from usuario');
                 while ($reg = $busca->fetch_object()) {
-                    // <a href=../actions/delete.php?del=" . $reg->nick . "></a>
                     echo "<tr>";
                     echo "<td>" . $reg->nome . "</td>";
                     echo "<td>" . $reg->email . "</td>";
                     echo "<td>" . $reg->nivel . "</td>";
-                    echo "<td><a href='" . modalDelete($reg->nick, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#deleteModal'><i class='material-icons px-3'>person_remove</i></a>";
-                    echo "<a href='../actions/edit.php?edit=" . $reg->nick . "'><i class='material-icons'>edit</i></a>
+                    echo "<td><a href='" . modalDelete($reg->nick, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#del" . $reg->nick . "'><i class='material-icons px-3'>person_remove</i></a>";
+                    echo "<a href='" . modalEdit($reg->nick, $reg->nome, $reg->email) . "'data-bs-toggle='modal' data-bs-target='#edit" . $reg->nick . "'><i class='material-icons'>edit</i></a>
                     </td></tr>";
                 }
                 ?>

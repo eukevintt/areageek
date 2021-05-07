@@ -17,6 +17,7 @@
     $editorVe = false;
     $noticias = 'active';
     $categoriaVe = true;
+    $admVe = false;
     include "../includes/menu.php";
 
     ?>

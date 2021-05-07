@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
-    <title>Relação de Usuários</title>
+    <title>Relação de Categorias</title>
 </head>
 
 <body>
@@ -22,28 +22,24 @@
     include "../includes/menu.php";
 
     ?>
-    <h1 class="display-3 text-center">Relação Usuários</h1>
+    <h1 class="display-3 text-center">Relação Categorias</h1>
     <div class="container">
         <table id="relacaoUsu" class="display table table-striped">
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Nivel</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
 
                 <?php
-                $busca = $banco->query('select nick, nome, email, nivel from usuario');
+                $busca = $banco->query('select id_cat as id, nome_cat as nome from categorias');
                 while ($reg = $busca->fetch_object()) {
                     echo "<tr>";
                     echo "<td>" . $reg->nome . "</td>";
-                    echo "<td>" . $reg->email . "</td>";
-                    echo "<td>" . $reg->nivel . "</td>";
-                    echo "<td><a href='" . modalDeleteUsu($reg->nick, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#del" . $reg->nick . "'><i class='material-icons px-3'>person_remove</i></a>";
-                    echo "<a href='" . modalEditUsu($reg->nick, $reg->nome, $reg->email) . "'data-bs-toggle='modal' data-bs-target='#edit" . $reg->nick . "'><i class='material-icons'>edit</i></a>
+                    echo "<td><a href='" . modalDeleteCat($reg->id, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#del" . $reg->id . "'><i class='material-icons px-3'>person_remove</i></a>";
+                    echo "<a href='" . modalEditCat($reg->id, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#edit" . $reg->id . "'><i class='material-icons'>edit</i></a>
                     </td></tr>";
                 }
                 ?>

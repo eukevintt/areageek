@@ -17,6 +17,7 @@
     $editorVe = false;
     $musicas = 'active';
     $categoriaVe = true;
+    $admVe = false;
     include "../includes/menu.php";
 
     ?>

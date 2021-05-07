@@ -16,6 +16,7 @@
     require_once "includes/funcoes.php";
     $editorVe = false;
     $categoriaVe  = false;
+    $admVe = false;
     include "includes/menu.php";
 
     ?>

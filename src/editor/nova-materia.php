@@ -17,6 +17,7 @@
     $editorVe = true;
     $categoriaVe  = false;
     $novaMat = 'active';
+    $admVe = false;
     include "../includes/menu.php";
 
     if (isUsu() || !isLogado()) {

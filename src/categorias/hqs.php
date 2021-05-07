@@ -17,6 +17,7 @@
     $editorVe = false;
     $hqs = 'active';
     $categoriaVe = true;
+    $admVe = false;
     include "../includes/menu.php";
 
     ?>

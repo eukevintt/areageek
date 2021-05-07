@@ -18,6 +18,7 @@
     $cadastro = 'active';
     $clickedCad = true;
     $categoriaVe  = false;
+    $admVe = false;
     include "includes/menu.php";
 
     if (isLogado() && !isAdmin()) {

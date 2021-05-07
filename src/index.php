@@ -17,6 +17,7 @@
     $editorVe = false;
     $index = 'active';
     $categoriaVe  = false;
+    $admVe = false;
     include "includes/menu.php";
     ?>
     <div class="container py-4">

@@ -17,6 +17,7 @@
     $editorVe = false;
     $filmes = 'active';
     $categoriaVe  = true;
+    $admVe = false;
     include "../includes/menu.php";
 
     ?>

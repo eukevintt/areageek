@@ -17,6 +17,7 @@
     $editorVe = false;
     $clickedLogin = true;
     $categoriaVe  = false;
+    $admVe = false;
     $login = 'btn-dark';
     include "includes/menu.php";
 

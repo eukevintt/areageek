@@ -1,5 +1,5 @@
 <h1 class='display-3 text-center pb-5'>Nova Notícia</h1>
-<form action="nova-materia.php" method="post" class='row g-3'>
+<form action="nova-materia.php" method="post" class='row g-3' enctype="multipart/form-data">
     <div class="col-md-12">
         <label for='titulo' class='form-label'>Titulo</label>
         <input type="text" name="titulo" id="titulo" class='form-control' required>
@@ -18,20 +18,44 @@
     </div>
     <div class="col-md-12">
         <label for='img' class='form-label'>Imagem</label>
-        <input type="file" name="img" id="img" class='form-control'>
+        <input type="file" name="image" id="image" class='form-control'>
     </div>
-    <div class="col-md-4">
-        <label for='editor' class='form-label'>Editor Nome</label>
-        <select name="editor" id="editor" class='form-select' required>
-            <option value="" selected>Selecione</option>
-            <?php
-            $busca = $banco->query('select nick, nome from usuario where nivel = "editor"');
-            while ($reg = $busca->fetch_object()) {
-                echo "<option value='$reg->nick'>$reg->nome</option>";
-            }
-            ?>
-        </select>
-    </div>
+    <?php
+    if (isAdmin()) {
+
+
+        echo '<div class="col-md-4">
+        <label for="editor" class="form-label">Editor Nome</label>
+        <select name="editor" id="editor" class="form-select" required>
+        ?>
+            <option value="" selected>Selecione</option>'; ?>
+    <?php
+
+        $busca = $banco->query('select nick, nome from usuario where nivel = "editor" or nivel="admin"');
+        while ($reg = $busca->fetch_object()) {
+            echo "<option value='$reg->nick'>$reg->nome</option>";
+        }
+
+        echo "</select>
+    </div>";
+    }
+    ?>
+
+    <?php
+    if (isEditor()) {
+        echo '<div class="col-md-4">
+        <label for="editor" class="form-label">Editor Nome</label>
+        <select name="editor" id="editor" class="form-select" required>
+        ?>'; ?>
+    <?php
+
+        $busca = $banco->query('select nick, nome from usuario where nivel = "editor" or nivel="admin"');
+        echo "<option value='" . $_SESSION['user'] . "'>" . $_SESSION['nome'] . "</option>";
+        echo "</select>
+    </div>";
+    }
+    ?>
+
     <div class="col-md-4">
         <label for='assunto' class='form-label'>Assunto</label>
         <select name="assunto" id="assunto" class='form-select' required>

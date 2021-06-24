@@ -1,6 +1,7 @@
 <?php
 include "../includes/funcoes.php";
 include "../includes/conectar.php";
+
 if (isset($_POST['nick'])) {
     $nick = $_POST['nick'];
     $nome = $_POST['nome'] ?? null;
@@ -29,12 +30,43 @@ if (isset($_POST['idCat'])) {
     $id = $_POST['idCat'];
     $nome = $_POST['nomeCat'];
 
-    if (!(empty($nomeCat) || is_null($nomeCat))) {
+    if (empty($nome) || is_null($nome)) {
         echo "<script>alert('O campo é obrigatório')</script>";
         echo "<script>setTimeout(function(){
                 window.location='../adm/relacao-cat.php'
-            }, 2000)</script>";
+            }, 1000)</script>";
+    } else {
+        $banco->query("update categorias set nome_cat = '$nome' where id_cat='$id'");
+        echo "<script>window.location='../adm/relacao-cat.php'</script>";
     }
-    $banco->query("update categorias set nome_cat = '$nome' where id_cat='$id'");
-    echo "<script>window.location='../adm/relacao-cat.php'</script>";
+}
+
+if (isset($_POST['idAss'])) {
+    $id = $_POST['idAss'];
+    $nome = $_POST['nomeAss'];
+
+    if (empty($nome) || is_null($nome)) {
+        echo "<script>alert('O campo é obrigatório')</script>";
+        echo "<script>setTimeout(function(){
+                window.location='../adm/relacao-ass.php'
+            }, 1000)</script>";
+    } else {
+        $banco->query("update assunto set nome_ass = '$nome' where id_ass ='$id'");
+        echo "<script>window.location='../adm/relacao-ass.php'</script>";
+    }
+}
+
+if (isset($_POST['idMat'])) {
+    $id = $_POST['idMat'];
+
+    if (empty($nome) || is_null($nome)) {
+        echo "<script>alert('O campo é obrigatório')</script>";
+        echo "<script>setTimeout(function(){
+                window.location='../adm/relacao-ass.php'
+            }, 1000)</script>";
+    }
+    // } else {
+    //     $banco->query("update assunto set nome_ass = '$nome' where id_ass ='$id'");
+    //     echo "<script>window.location='../adm/relacao-ass.php'</script>";
+    // }
 }

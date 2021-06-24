@@ -24,22 +24,30 @@
     ?>
     <h1 class="display-3 text-center">Relação Categorias</h1>
     <div class="container">
-        <table id="relacaoUsu" class="display table table-striped">
+        <table id="relacaoMat" class="display table table-striped">
             <thead>
                 <tr>
-                    <th>Nome</th>
+                    <th>Titulo</th>
+                    <th>Assunto</th>
+                    <th>Categoria</th>
+                    <th>Autor</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
 
                 <?php
-                $busca = $banco->query('select id_cat as id, nome_cat as nome from categorias');
+
+                $busca = $banco->query('select noticia.id_not as idnot, noticia.titulo, noticia.id_ass as idass, noticia.usua_nick as usunick, noticia.id_cat as idcat, assunto.nome_ass as nomeass, categorias.nome_cat as nomecat, usuario.nick, usuario.nome from noticia join assunto on noticia.id_ass = assunto.id_ass join usuario on noticia.usua_nick = usuario.nick join categorias on noticia.id_cat = categorias.id_cat');
+
                 while ($reg = $busca->fetch_object()) {
                     echo "<tr>";
+                    echo "<td>" . $reg->titulo . "</td>";
+                    echo "<td>" . $reg->nomeass . "</td>";
+                    echo "<td>" . $reg->nomecat . "</td>";
                     echo "<td>" . $reg->nome . "</td>";
-                    echo "<td><a href='" . modalDeleteCat($reg->id, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#del" . $reg->id . "'><i class='material-icons px-3'>person_remove</i></a>";
-                    echo "<a href='" . modalEditCat($reg->id, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#edit" . $reg->id . "'><i class='material-icons'>edit</i></a>
+                    echo "<td><a href='" . modalDeleteMat($reg->idnot) . "'data-bs-toggle='modal' data-bs-target='#del" . $reg->idnot . "'><i class='material-icons px-3'>person_remove</i></a>";
+                    echo "<a href='" . modalEditMat($reg->idnot) . "'data-bs-toggle='modal' data-bs-target='#edit" . $reg->idnot . "'><i class='material-icons'>edit</i></a>
                     </td></tr>";
                 }
                 ?>
@@ -54,7 +62,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            $('#relacaoUsu').DataTable();
+            $('#relacaoMat').DataTable();
         });
     </script>
 </body>

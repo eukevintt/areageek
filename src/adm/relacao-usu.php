@@ -27,6 +27,7 @@
         <table id="relacaoUsu" class="display table table-striped">
             <thead>
                 <tr>
+                    <th>Nick</th>
                     <th>Nome</th>
                     <th>E-mail</th>
                     <th>Nivel</th>
@@ -39,6 +40,7 @@
                 $busca = $banco->query('select nick, nome, email, nivel from usuario');
                 while ($reg = $busca->fetch_object()) {
                     echo "<tr>";
+                    echo "<td>" . $reg->nick . "</td>";
                     echo "<td>" . $reg->nome . "</td>";
                     echo "<td>" . $reg->email . "</td>";
                     echo "<td>" . $reg->nivel . "</td>";

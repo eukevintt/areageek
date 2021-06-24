@@ -39,7 +39,7 @@
             } else {
                 $q = "insert into categorias (nome_cat) values ('$categoria')";
                 if ($banco->query($q)) {
-                    echo 'Categoria cadastrada!';
+                    echo '<div class="alert alert-success text-center fade show w-50 mx-auto" role="alert"><i class="material-icons float-start">done</i>Categoria cadastrada!<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button></div>';
                     require "../forms/form-nova-categoria.php";
                 } else {
                     echo 'Não foi possivel criar a categoria';

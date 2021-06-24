@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
-    <title>Relação de Categorias</title>
+    <title>Relação de Assuntos</title>
 </head>
 
 <body>
@@ -22,9 +21,9 @@
     include "../includes/menu.php";
 
     ?>
-    <h1 class="display-3 text-center">Relação Categorias</h1>
-    <div class="container">
-        <table id="relacaoUsu" class="display table table-striped">
+    <h1 class="display-3 text-center">Relação Assuntos</h1>
+    <div class="container">>
+        <table id="relacaoAss" class="display table table-striped">
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -32,29 +31,27 @@
                 </tr>
             </thead>
             <tbody>
-
                 <?php
-                $busca = $banco->query('select id_cat as id, nome_cat as nome from categorias');
+                $busca = $banco->query('select id_ass as id, nome_ass as nome from assunto');
+
                 while ($reg = $busca->fetch_object()) {
                     echo "<tr>";
                     echo "<td>" . $reg->nome . "</td>";
-                    echo "<td><a href='" . modalDeleteCat($reg->id, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#del" . $reg->id . "'><i class='material-icons px-3'>person_remove</i></a>";
-                    echo "<a href='" . modalEditCat($reg->id, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#edit" . $reg->id . "'><i class='material-icons'>edit</i></a>
+                    echo "<td><a href='" . modalDeleteAss($reg->id, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#del" . $reg->id . "'><i class='material-icons px-3'>person_remove</i></a>";
+                    echo "<a href='" . modalEditAss($reg->id, $reg->nome) . "'data-bs-toggle='modal' data-bs-target='#edit" . $reg->id . "'><i class='material-icons'>edit</i></a>
                     </td></tr>";
                 }
                 ?>
             </tbody>
         </table>
     </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            $('#relacaoUsu').DataTable();
+            $('#relacaoAss').DataTable();
         });
     </script>
 </body>

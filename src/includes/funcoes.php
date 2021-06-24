@@ -177,11 +177,103 @@ function modalEditCat($id, $nome)
         </div>
         <div class="modal-body">
         <form action="../actions/edit.php" class="row g-3" method="POST">
-          <input type="hidden" class="form-control" id="nomeCat" name="idCat" value="' . $id . '">
+          <input type="hidden" class="form-control" id="idCat" name="idCat" value="' . $id . '">
         <div class="col-md-12">
           <label for="nome" class="form-label">Nome</label>
           <input type="text" class="form-control" id="nomeCat" name="nomeCat" value="' . $nome . '" require>
         </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Editar</button>
+        </div>
+      </form>
+        </div>
+      </div>
+    </div>
+  </div>';
+}
+
+function modalDeleteAss($id, $nome)
+{
+  echo '<div class="modal fade" id="del' . $id . '" tabindex="-1" aria-labelledby="deleteModalModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Deletar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Você realmente deseja deletar a categoria ' . $nome . '?
+        </div>
+        <div class="modal-footer">
+        <a href=../actions/delete.php?delass=' . $id . '><button type="button" class="btn btn-success">Sim</button></a>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não</button>
+        </div>
+      </div>
+    </div>
+  </div>';
+}
+
+function modalEditAss($id, $nome)
+{
+
+  echo '<div class="modal fade" id="edit' . $id . '" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar Categoria</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form action="../actions/edit.php" class="row g-3" method="POST">
+          <input type="hidden" class="form-control" id="idAss" name="idAss" value="' . $id . '">
+        <div class="col-md-12">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nomeAss" name="nomeAss" value="' . $nome . '" require>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Editar</button>
+        </div>
+      </form>
+        </div>
+      </div>
+    </div>
+  </div>';
+}
+
+function modalDeleteMat($id)
+{
+  echo '<div class="modal fade" id="del' . $id . '" tabindex="-1" aria-labelledby="deleteModalModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Deletar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Você realmente deseja deletar essa matéria?
+        </div>
+        <div class="modal-footer">
+        <a href=../actions/delete.php?delmat=' . $id . '><button type="button" class="btn btn-success">Sim</button></a>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não</button>
+        </div>
+      </div>
+    </div>
+  </div>';
+}
+
+function modalEditMat($id)
+{
+
+  echo '<div class="modal fade" id="edit' . $id . '" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar Categoria</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form action="../actions/edit.php" class="row g-3" method="POST">
+          <input type="hidden" class="form-control" id="idMat" name="idMat" value="' . $id . '">
         <div class="col-12">
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
